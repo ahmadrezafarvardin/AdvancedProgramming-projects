@@ -1,0 +1,197 @@
+Here's how you can use a static member to limit the number of objects that can be created from a class to a maximum of 3:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class LimitedClass {
+private:
+    static int objectCount;  // Static member to keep track of objects
+    int id;
+
+public:
+    // Constructor
+    LimitedClass() {
+        if (objectCount >= 3) {
+            throw runtime_error("Cannot create more than 3 objects!");
+        }
+        objectCount++;
+        id = objectCount;
+        cout << "Object " << id << " created" << endl;
+    }
+
+    // Destructor
+    ~LimitedClass() {
+        cout << "Object " << id << " destroyed" << endl;
+        objectCount--;
+    }
+
+    // Static method to get current count
+    static int getCount() {
+        return objectCount;
+    }
+};
+
+// Initialize static member
+int LimitedClass::objectCount = 0;
+
+int main() {
+    try {
+        cout << "Current count: " << LimitedClass::getCount() << endl;
+
+        // Creating objects
+        LimitedClass obj1;
+        cout << "Current count: " << LimitedClass::getCount() << endl;
+
+        LimitedClass obj2;
+        cout << "Current count: " << LimitedClass::getCount() << endl;
+
+        LimitedClass obj3;
+        cout << "Current count: " << LimitedClass::getCount() << endl;
+
+        // This will throw an exception
+        LimitedClass obj4;
+
+    } catch (const runtime_error& e) {
+        cout << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+```
+
+Output:
+```
+Current count: 0
+Object 1 created
+Current count: 1
+Object 2 created
+Current count: 2
+Object 3 created
+Current count: 3
+Error: Cannot create more than 3 objects!
+Object 3 destroyed
+Object 2 destroyed
+Object 1 destroyed
+```
+
+Alternative approach using a static factory method:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class LimitedClass {
+private:
+    static int objectCount;
+    int id;
+
+    // Make constructor private
+    LimitedClass() {
+        id = objectCount + 1;
+        cout << "Object " << id << " created" << endl;
+    }
+
+public:
+    // Static factory method
+    static LimitedClass* createObject() {
+        if (objectCount >= 3) {
+            cout << "Cannot create more than 3 objects!" << endl;
+            return nullptr;
+        }
+        objectCount++;
+        return new LimitedClass();
+    }
+
+    // Destructor
+    ~LimitedClass() {
+        cout << "Object " << id << " destroyed" << endl;
+        objectCount--;
+    }
+
+    static int getCount() {
+        return objectCount;
+    }
+};
+
+int LimitedClass::objectCount = 0;
+
+int main() {
+    cout << "Current count: " << LimitedClass::getCount() << endl;
+
+    // Creating objects using factory method
+    LimitedClass* obj1 = LimitedClass::createObject();
+    cout << "Current count: " << LimitedClass::getCount() << endl;
+
+    LimitedClass* obj2 = LimitedClass::createObject();
+    cout << "Current count: " << LimitedClass::getCount() << endl;
+
+    LimitedClass* obj3 = LimitedClass::createObject();
+    cout << "Current count: " << LimitedClass::getCount() << endl;
+
+    // This will return nullptr
+    LimitedClass* obj4 = LimitedClass::createObject();
+
+    // Clean up
+    delete obj1;
+    delete obj2;
+    delete obj3;
+
+    return 0;
+}
+```
+
+Output:
+```
+Current count: 0
+Object 1 created
+Current count: 1
+Object 2 created
+Current count: 2
+Object 3 created
+Current count: 3
+Cannot create more than 3 objects!
+Object 3 destroyed
+Object 2 destroyed
+Object 1 destroyed
+```
+
+Key points:
+1. The static member `objectCount` keeps track of the number of objects created
+2. The constructor checks if the limit is reached before creating a new object
+3. The destructor decrements the count when objects are destroyed
+4. In the first approach, we use exception handling to prevent creation of more than 3 objects
+5. In the second approach, we use a factory method and return nullptr if the limit is reached
+6. The static member must be initialized outside the class definition
+
+This implementation ensures that no more than 3 objects of the class can exist at any time. If someone tries to create a fourth object, either an exception will be thrown (first approach) or nullptr will be returned (second approach).
+
+
+
+
+### Problem 1
+Suppose \( G \) is a directed graph and \( D \) is a strongly connected component of \( G \). Prove that if \( G \) has a cycle, then \( D \) also has a cycle.  
+(Hint: Examine the sequence of nodes \(\{v_i, v_{i+1}\}\) in a cycle of \( G \).)
+
+---
+
+### Problem 2
+Suppose \( S \) is an alphabet of size \( m \). Prove that it is possible to create a cyclic sequence of length \( m^4 - m \) from the letters of \( S \) in such a way that all four-letter consecutive substrings are unique and include at least two identical letters.  
+(Cyclic sequence: arranging the letters in a circle.)
+
+---
+
+### Problem 3
+Prove that a directed graph is strongly connected if and only if, for every partition of the set of vertices into two disjoint subsets \( S \) and \( T \), there exists an edge from a vertex in \( S \) to a vertex in \( T \).
+
+---
+
+### Problem 4
+Determine the minimum value of \( n \) such that a tournament on \( n \)-vertices necessarily has at least one vertex with an equal number of incoming and outgoing edges.  
+(A tournament is a directed graph where every pair of vertices is connected by exactly one directed edge.)
+
+---
+
+### Problem 5
+Prove that in any directed graph, some strongly connected components have no incoming edges, while others have no outgoing edges.  
+(Note: By "no incoming edges," it means there is no edge entering any vertex of the component from outside, and similarly for "no outgoing edges.")

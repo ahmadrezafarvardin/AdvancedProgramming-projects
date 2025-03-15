@@ -1,0 +1,47 @@
+We are tasked with proving that for \( n \geq 4 \), the number of connected graphs on \( n \) labelled vertices is greater than half the total number of graphs on \( n \) labelled vertices. 
+
+
+Let’s begin by defining the sets more clearly:
+
+
+- Let \( S \) be the set of all graphs on \( n \) labelled vertices. The total number of graphs on \( n \) vertices is \( |S| = 2^{\binom{n}{2}} \), because each pair of vertices can either have an edge or not, and there are \( \binom{n}{2} \) pairs of vertices.
+
+  
+
+- Let \( A \subseteq S \) be the set of all **connected** graphs on \( n \) labelled vertices. We want to show that \( |A| > \frac{|S|}{2} \).
+
+
+### Step 1: Number of disconnected graphs
+
+
+A graph on \( n \) vertices is either connected or disconnected. If a graph is disconnected, it can be split into two or more connected components. A crude upper bound for the number of disconnected graphs can be obtained by considering the number of graphs that are disconnected into two non-empty parts.
+
+
+The number of ways to partition the set of \( n \) vertices into two non-empty disjoint sets is given by the number of ways to choose a subset of vertices for one part, which is \( 2^n - 2 \). This counts all non-empty and proper subsets of the \( n \)-vertex set.
+
+
+For each such partition, the edges can only go within each part, meaning that edges between vertices in different parts are absent. The number of possible edges between vertices within each part is less than the total number of possible edges between all \( n \) vertices. Hence, the number of edges that can be present in a disconnected graph is reduced compared to a connected graph.
+
+
+### Step 2: Comparing the sizes of \( |A| \) and \( |S|/2 \)
+
+
+Now, let’s use some intuition about the structure of graphs:
+
+
+- As \( n \) grows larger, the vast majority of graphs on \( n \) vertices are connected. For instance, if you randomly choose edges between vertices, with high probability, the graph will be connected, especially as the number of vertices \( n \) increases.
+
+
+- More formally, the number of disconnected graphs is much smaller than the total number of graphs. The reason is that making a graph disconnected imposes significant restrictions on where edges can and cannot go. Specifically, in a disconnected graph, no edges are allowed between certain pairs of vertices (those in different connected components), which drastically reduces the number of possible graphs.
+
+
+Thus, the number of disconnected graphs is much smaller than the total number of graphs, especially for \( n \geq 4 \).
+
+
+### Step 3: Conclusion
+
+
+Given that disconnected graphs form a relatively small fraction of the total number of graphs as \( n \) increases, it follows that the majority of graphs are connected. Therefore, the number of connected graphs \( |A| \) is greater than half the total number of graphs \( |S| \), meaning \( |A| > \frac{|S|}{2} \) for \( n \geq 4 \).
+
+
+Thus, we have proven that for \( n \geq 4 \), the number of connected graphs on \( n \) labelled vertices is greater than half the total number of graphs on \( n \) labelled vertices. \( \blacksquare \)

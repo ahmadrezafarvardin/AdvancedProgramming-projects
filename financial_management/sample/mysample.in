@@ -1,0 +1,29 @@
+new_category transportation subway snapp bus
+add_expense transportation 100
+add_expense transportation/snapp 1000
+add_expense transportation/subway 300
+add_expense transportation/bus 400
+add_expense transportation/snapp 500
+report
+
+new_category giftshop mom dad ali
+add_expense giftshop 200
+add_expense giftshop/mom 1400
+add_expense giftshop/dad 50
+add_expense giftshop/dad 150
+add_expense giftshop/ali 400
+report
+
+remove_expense transportation/snapp
+
+report
+
+
+new_category clothes shirt panth shorts
+add_expense clothes 100
+add_expense clothes/shirt 2000
+add_expense clothes/panth 2000
+add_expense clothes/shorts 100
+
+
+report 100

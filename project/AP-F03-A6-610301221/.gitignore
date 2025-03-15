@@ -1,0 +1,6 @@
+*.txt
+test/*
+test
+*.in
+*.out
+testcase/

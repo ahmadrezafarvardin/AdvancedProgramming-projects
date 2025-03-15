@@ -1,0 +1,27 @@
+streak
+add_flashcard 10
+5 - 2 = ?
+3
+6 * 9 = ?
+54
+How many continents are there in the world?
+7
+What is the meaning of "abandon"?
+Leave
+Who wrote "Romeo and Juliet"?
+William Shakespeare
+What is H2O commonly known as?
+Water
+What is the synonym of "brave"?
+Courageous
+What is the capital of France?
+Paris
+What is the largest planet in our solar system?
+Jupiter
+What is the square root of 81?
+9
+next_day
+review_today 2
+3
+53
+next_day

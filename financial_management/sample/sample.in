@@ -1,0 +1,5 @@
+new_category transportation subway bus snapp
+add_expense transportation/snapp 1000
+new_category university fee
+report
+

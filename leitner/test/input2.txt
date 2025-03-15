@@ -1,0 +1,126 @@
+add_flashcard 12
+How many sides does a hexagon have?
+6
+What is the main language spoken in Brazil?
+Portuguese
+What is the boiling point of water in Celsius?
+100
+What is the meaning of "abandon"?
+Leave
+Who wrote "Romeo and Juliet"?
+William Shakespeare
+What is H2O commonly known as?
+Water
+Who discovered gravity?
+Isaac Newton
+What is the capital of France?
+Paris
+What is the largest planet in our solar system?
+Jupiter
+What is the square root of 81?
+9
+What is the hardest natural substance on Earth?
+Diamond
+What is the speed of light in a vacuum (in m/s)?
+299,792,458 m/s
+review_today 1
+5
+next_day
+review_today 2
+4
+English
+next_day
+streak
+add_flashcard 6
+12 / 4 = ?
+3
+8 + 7 = ?
+15
+What is the chemical symbol for gold?
+Au
+How many continents are there in the world?
+7
+5 - 2 = ?
+3
+6 * 9 = ?
+54
+review_today 3
+5
+English
+100
+next_day
+next_day
+get_report 3 3
+next_day
+review_today 3
+100
+6
+English
+next_day
+get_progress_report
+add_flashcard 6
+What is the hardest natural substance on Earth?
+Diamond
+Who discovered gravity?
+Isaac Newton
+What is the largest mammal on Earth?
+Blue Whale
+What is the capital of Japan?
+Tokyo
+What is the synonym of "happy"?
+Joyful
+How many hours are in a day?
+24
+next_day
+review_today 5
+Portuguese
+Leave
+William Shakespeare
+Water
+Amir Hossein
+next_day
+get_report 2 8
+review_today 4
+5
+100
+Portuguese
+Leave
+next_day
+next_day
+next_day
+next_day
+next_day
+review_today 2
+100
+Portuguese
+get_report 2 14
+next_day
+next_day
+next_day
+add_flashcard 3
+What is the process by which plants make their food using sunlight?
+Photosynthesis
+How many continents are there on Earth?
+Seven
+What is the first element on the periodic table?
+Hydrogen
+next_day
+next_day
+next_day
+streak
+next_day
+next_day
+next_day
+get_report 9 9
+next_day
+next_day
+next_day
+next_day
+next_day
+next_day
+next_day
+review_today 2
+100
+Portuguese
+next_day
+get_progress_report
