@@ -1,0 +1,75 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UTaste - Restaurant Reservation System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-brand">UTaste</div>
+          <div class="nav-links">
+            <a href="/" class="active">Home</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div class="welcome-section">
+          <h1>UTaste</h1>
+          <p>Your ultimate restaurant reservation platform</p>
+
+          <div class="auth-buttons" id="authButtons">
+            <a href="/pages/login.html" class="btn btn-primary">Login</a>
+            <a href="/pages/signup.html" class="btn btn-primary">Sign Up</a>
+          </div>
+
+          <div class="dashboard" id="userDashboard" style="display: none">
+            <h2>Welcome to your Dashboard</h2>
+            <div class="dashboard-buttons">
+              <a href="/pages/reserve.html" class="dashboard-btn">
+                <i class="fas fa-calendar-plus"></i>
+                Make Reservation
+              </a>
+              <a href="/pages/increase-budget.html" class="dashboard-btn">
+                <i class="fas fa-wallet"></i>
+                Increase Budget
+              </a>
+              <a href="/pages/my-reservations.html" class="dashboard-btn">
+                <i class="fas fa-list"></i>
+                My Reservations
+              </a>
+              <a href="/pages/restaurants.html" class="dashboard-btn">
+                <i class="fas fa-utensils"></i>
+                Restaurant Details
+              </a>
+              <button id="logoutBtn" class="dashboard-btn logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </button>
+            </div>
+          </div>
+
+          <div class="signature">Made by A.Fv</div>
+        </div>
+      </main>
+    </div>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isLoggedIn = document.cookie.includes("sessionId=");
+      if (isLoggedIn) {
+        window.location.href = "/pages/home.html";
+      }
+    });
+  </script>
+</html>

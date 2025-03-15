@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Details - UTaste</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-brand">UTaste</div>
+          <div class="nav-links">
+            <a href="/pages/home.html">Home</a>
+            <a href="/pages/restaurants.html">Restaurants Details</a>
+            <a href="/pages/reserve.html">Make Reservation</a>
+            <a href="/pages/increase-budget.html">Increase Budget</a>
+            <a href="/pages/my-reservations.html">My Reservations</a>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="search-section">
+          <h2>Search Restaurant</h2>
+          <form id="restaurantSearchForm" class="search-form">
+            <div class="form-group">
+              <label for="restaurantNameInput">Restaurant Name:</label>
+              <input
+                type="text"
+                id="restaurantNameInput"
+                name="restaurant_name"
+                required
+                placeholder="Enter restaurant name"
+                class="search-input"
+              />
+            </div>
+            <button type="submit" class="search-button">Search</button>
+          </form>
+        </section>
+
+        <div id="restaurantDetailsContainer" style="display: none"></div>
+
+        <div
+          id="errorContainer"
+          class="error-message"
+          style="display: none"
+        ></div>
+
+        <div id="loadingIndicator" class="loading" style="display: none">
+          Loading restaurant details...
+        </div>
+      </main>
+
+      <footer class="page-footer">
+        <p>&copy; 2025 UTaste. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/restaurant-details.js"></script>
+  </body>
+</html>

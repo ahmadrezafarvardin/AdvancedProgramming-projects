@@ -1,0 +1,115 @@
+
+# Sheep Fight
+
+## Project Overview
+Sheep Fight is a two-player competitive game developed using SFML (Simple and Fast Multimedia Library), featuring strategic animal-based gameplay.
+
+## Prerequisites
+
+### Dependencies
+- C++ compiler (supporting C++11 or later)
+- SFML Library
+- Make
+
+### Installation
+
+1. Install SFML:
+```bash
+# On Ubuntu/Debian
+sudo apt-get install libsfml-dev
+
+# On macOS with Homebrew
+brew install sfml
+
+# On Windows, download from SFML website and set up manually
+```
+
+2. Compile the project:
+```bash
+make
+```
+
+## Project Structure
+```
+.
+├── files/                # Game assets
+│   ├── audio/            # Sound files
+│   ├── fonts/            # Font files
+│   └── pics/             # Image resources
+├── include/              # Header files
+│   ├── Animal.hpp
+│   ├── Game.hpp
+│   ├── global.hpp
+│   ├── Player.hpp
+│   └── TextureManager.hpp
+├── src/                  # Source files
+│   ├── Animal.cpp
+│   ├── Game.cpp
+│   ├── main.cpp
+│   └── Player.cpp
+└── Makefile              # Build configuration
+```
+
+## Game Controls
+
+### Player 1 Controls
+- **Up Arrow**: Move up
+- **Down Arrow**: Move down
+- **Enter**: Select/Confirm action
+
+### Player 2 Controls
+- **W**: Move up
+- **S**: Move down
+- **Space**: Select/Confirm action
+
+## Features
+- Two-player competitive gameplay
+- Multiple animal characters
+- Strategic movement and selection mechanics
+- Rich visual assets
+
+## Running the Game
+1. Compile the project:
+```bash
+make
+```
+
+2. Run the executable:
+```bash
+./sheep_fight
+```
+
+## Asset Management
+- Game assets are stored in the `files/` directory
+  - `audio/`: Sound effects
+  - `fonts/`: Game font
+  - `pics/`: Game graphics (characters, backgrounds)
+
+## Build Configuration
+The project uses a Makefile for compilation. Key commands:
+- `make`: Compile the project
+- `make clean`: Remove compiled objects
+
+## Technologies
+- **Language**: C++
+- **Graphics Library**: SFML
+- **Build System**: Make
+
+## Troubleshooting
+- Ensure SFML is correctly installed
+- Check that all assets are in the correct `files/` subdirectories
+- Verify compiler and SFML version compatibility
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## Contact
+- **Email**: ahmadreza.farvardin@gmail.com
+
+## Acknowledgments
+- SFML Library
+- Game asset creators

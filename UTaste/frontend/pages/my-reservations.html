@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Reservations - UTaste</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-brand">UTaste</div>
+          <div class="nav-links">
+            <a href="/pages/home.html">Home</a>
+            <a href="/pages/restaurants.html">Restaurants Details</a>
+            <a href="/pages/reserve.html">Make Reservation</a>
+            <a href="/pages/increase-budget.html">Increase Budget</a>
+            <a href="/pages/my-reservations.html">My Reservations</a>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="reservations-container">
+          <div class="page-header">
+            <h2>My Reservations</h2>
+            <p class="subtitle">View and manage your restaurant reservations</p>
+          </div>
+
+          <div class="search-options">
+            <div class="search-section">
+              <h3>Search Options</h3>
+
+              <div class="quick-view">
+                <button id="viewAllReservations" class="action-button">
+                  <span class="icon">📋</span> View All Reservations
+                </button>
+              </div>
+
+              <div class="search-forms">
+                <form id="restaurantSearchForm" class="search-form">
+                  <h4>Search by Restaurant</h4>
+                  <div class="form-group">
+                    <label for="restaurantName">Restaurant Name:</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="restaurantName"
+                        name="restaurant_name"
+                        placeholder="Enter restaurant name"
+                      />
+                      <button type="submit" class="search-btn">Search</button>
+                    </div>
+                  </div>
+                </form>
+
+                <form id="specificReservationForm" class="search-form">
+                  <h4>Search Specific Reservation</h4>
+                  <div class="form-group">
+                    <label for="specificRestaurant">Restaurant Name:</label>
+                    <input
+                      type="text"
+                      id="specificRestaurant"
+                      name="restaurant_name"
+                      placeholder="Restaurant name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="reservationId">Reservation ID:</label>
+                    <input
+                      type="text"
+                      id="reservationId"
+                      name="reserve_id"
+                      placeholder="Reservation ID"
+                    />
+                  </div>
+                  <button type="submit" class="search-btn">View Details</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-section">
+            <div id="loadingIndicator" class="loading" style="display: none">
+              <div class="loading-spinner"></div>
+              <span>Loading reservations...</span>
+            </div>
+
+            <div id="reservationsResults" class="reservations-list"></div>
+
+            <div id="noResultsMessage" class="no-results" style="display: none">
+              <span class="icon">🔍</span>
+              <p>No reservations found.</p>
+            </div>
+
+            <div id="errorMessage" class="error" style="display: none"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/my-reservations.js"></script>
+  </body>
+</html>

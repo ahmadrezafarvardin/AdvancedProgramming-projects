@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Make Reservation - UTaste</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-brand">UTaste</div>
+          <div class="nav-links">
+            <a href="/pages/home.html">Home</a>
+            <a href="/pages/restaurants.html">Restaurants Details</a>
+            <a href="/pages/reserve.html">Make Reservation</a>
+            <a href="/pages/increase-budget.html">Increase Budget</a>
+            <a href="/pages/my-reservations.html">My Reservations</a>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="form-container">
+          <h2>Make Reservation</h2>
+          <form id="reservationForm">
+            <div class="form-group">
+              <label for="restaurantName">Restaurant</label>
+              <input
+                type="text"
+                id="restaurantName"
+                name="restaurant_name"
+                required
+                placeholder="Enter restaurant name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="tableId">Table Number</label>
+              <input
+                type="number"
+                id="tableId"
+                name="table_id"
+                min="1"
+                required
+                placeholder="Enter table number"
+              />
+            </div>
+            <div class="form-group">
+              <label for="startTime">Start Time</label>
+              <input
+                type="number"
+                id="startTime"
+                name="start_time"
+                min="0"
+                max="23"
+                required
+                placeholder="Start time (0-23)"
+              />
+            </div>
+            <div class="form-group">
+              <label for="endTime">End Time</label>
+              <input
+                type="number"
+                id="endTime"
+                name="end_time"
+                min="1"
+                max="24"
+                required
+                placeholder="End time (1-24)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="foods">Foods (Optional, comma-separated)</label>
+              <input
+                type="text"
+                id="foods"
+                name="foods"
+                placeholder="e.g., joojeh, cholo morgh"
+              />
+            </div>
+
+            <div
+              id="responseMessage"
+              class="message"
+              style="display: none"
+            ></div>
+            <button type="submit">Make Reservation</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/reserve.js"></script>
+  </body>
+</html>

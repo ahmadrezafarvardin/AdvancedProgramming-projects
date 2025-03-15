@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Increase Budget - UTaste</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="nav-brand">UTaste</div>
+          <div class="nav-links">
+            <a href="/pages/home.html">Home</a>
+            <a href="/pages/restaurants.html">Restaurants Details</a>
+            <a href="/pages/reserve.html">Make Reservation</a>
+            <a href="/pages/increase-budget.html">Increase Budget</a>
+            <a href="/pages/my-reservations.html">My Reservations</a>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div class="form-container">
+          <h2>Increase Budget</h2>
+          <form id="increaseBudgetForm">
+            <div class="form-group">
+              <label for="amount">Amount to Add</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                min="1"
+                required
+                placeholder="Enter amount to add"
+              />
+            </div>
+            <div id="responseMessage" class="message"></div>
+            <button type="submit">Add to Budget</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("increaseBudgetForm");
+        const responseMessage = document.getElementById("responseMessage");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          responseMessage.textContent = "";
+          responseMessage.className = "message";
+
+          const amountInput = document.getElementById("amount");
+          const amount = parseInt(amountInput.value);
+
+          if (isNaN(amount) || amount <= 0) {
+            responseMessage.textContent =
+              "Please enter a valid positive amount";
+            responseMessage.classList.add("message-error");
+            responseMessage.classList.add("show");
+            return;
+          }
+
+          try {
+            const response = await API.increaseBudget(amount);
+            responseMessage.textContent = response;
+            responseMessage.classList.add("message-success");
+            responseMessage.classList.add("show");
+            amountInput.value = "";
+          } catch (error) {
+            responseMessage.textContent = error;
+            responseMessage.classList.add("message-error");
+            responseMessage.classList.add("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
